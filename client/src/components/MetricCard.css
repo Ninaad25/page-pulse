@@ -1,0 +1,65 @@
+.metric-card{
+
+    background:white;
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.25s;
+}
+
+.metric-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.metric-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:16px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.metric-info{
+
+    flex:1;
+
+}
+
+.metric-info span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.metric-info h2{
+
+    margin-top:8px;
+
+    font-size:30px;
+
+    color:#222;
+
+}

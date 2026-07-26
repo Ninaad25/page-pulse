@@ -1,0 +1,294 @@
+/* ===========================
+   CSS Variables
+=========================== */
+
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --secondary: #6b7280;
+  --input: #ffffff;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --primary: #2563eb;
+}
+
+body.dark {
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #f9fafb;
+  --secondary: #d1d5db;
+  --input: #374151;
+  --border: #4b5563;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ===========================
+   Global
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 48px;
+  color: var(--primary);
+}
+
+.header p {
+  margin-top: 10px;
+  color: var(--secondary);
+  font-size: 18px;
+}
+
+/* ===========================
+   Theme Toggle
+=========================== */
+
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.theme-toggle button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.25s;
+}
+
+.theme-toggle button:hover {
+  transform: rotate(20deg) scale(1.08);
+}
+
+/* ===========================
+   Search Bar
+=========================== */
+
+.search {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.search input {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--input);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 28px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .25s;
+}
+
+.search button:hover {
+  transform: translateY(-2px);
+}
+
+.search button:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   Statistics Grid
+=========================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* ===========================
+   Details Card
+=========================== */
+
+.details {
+  margin-top: 40px;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.details h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.details h2:first-child {
+  margin-top: 0;
+}
+
+.details p {
+  color: var(--secondary);
+  line-height: 1.7;
+}
+
+/* ===========================
+   History
+=========================== */
+
+.history {
+  margin-top: 45px;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.history-header h2 {
+  color: var(--text);
+}
+
+.clear-btn {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item:hover {
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 10px;
+}
+
+.history-item strong {
+  flex: 1;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.history-item span {
+  width: 100px;
+  text-align: center;
+  color: var(--secondary);
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 20px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .history-item span {
+    width: auto;
+    text-align: left;
+  }
+
+  .history-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+}
