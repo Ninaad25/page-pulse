@@ -57,16 +57,6 @@ function Hero() {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
             <a
-              href="https://page-pulse-azure.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-neutral btn-lg"
-            >
-              <FaExternalLinkAlt />
-              Live Demo
-            </a>
-
-            <a
               href="https://github.com/Ninaad25/page-pulse"
               target="_blank"
               rel="noopener noreferrer"
