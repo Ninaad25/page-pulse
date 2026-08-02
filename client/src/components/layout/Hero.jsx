@@ -6,7 +6,7 @@ import {
   FaChartLine,
   FaFilePdf,
 } from "react-icons/fa";
-import Footer from "./components/layout/Footer";
+
 
 function Hero() {
   return (
@@ -27,7 +27,7 @@ function Hero() {
           <h1 className="text-5xl md:text-7xl font-black tracking-tight">
             Page Pulse
           </h1>
-
+ 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl mt-6 opacity-90 leading-relaxed">
             Audit any website for <span className="font-bold">SEO</span>,{" "}
@@ -77,7 +77,7 @@ function Hero() {
             </a>
           </div>
         </div>
-        <Footer />
+        
       </div>
     </motion.section>
   );
