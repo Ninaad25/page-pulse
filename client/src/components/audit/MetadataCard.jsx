@@ -2,7 +2,7 @@ function MetadataCard({ result }) {
   if (!result) return null;
 
   return (
-    <div className="card bg-base-100 shadow-xl mt-8">
+    <div className="card bg-base-100/70 backdrop-blur-xl border border-base-300 shadow-2xl">
       <div className="card-body">
         <h2 className="card-title text-2xl">Website Metadata</h2>
 

@@ -4,7 +4,7 @@ function HistoryTable({ history, onSelect }) {
   if (!history.length) return null;
 
   return (
-    <div className="card bg-base-100 shadow-xl mt-8">
+    <div className="card bg-base-100/70 backdrop-blur-xl border border-base-300 shadow-2xl">
       <div className="card-body">
         <div className="flex justify-between items-center">
           <h2 className="card-title text-2xl">Recent Audits</h2>

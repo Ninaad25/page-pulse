@@ -1,28 +1,23 @@
-import React from "react";
+import { motion } from "framer-motion";
 
-const colorClasses = {
-  primary: "text-primary",
-  success: "text-success",
-  warning: "text-warning",
-  error: "text-error",
-  info: "text-info",
-};
-
-function MetricCard({ title, value, icon, color = "primary" }) {
+function MetricCard({ icon, title, value, color }) {
   return (
-    <div className="stat bg-base-100 rounded-2xl shadow-lg border border-base-300 hover:shadow-2xl transition-all duration-300">
-      <div className={`text-3xl ${colorClasses[color] || "text-primary"}`}>
-        {icon}
-      </div>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.2 }}
+      className={`card bg-base-100/80 backdrop-blur-xl shadow-2xl border-l-4 ${color}`}
+    >
+      <div className="card-body">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm opacity-70">{title}</p>
+            <h2 className="text-3xl font-bold mt-2">{value}</h2>
+          </div>
 
-      <div className="stat-title mt-2">{title}</div>
-
-      <div
-        className={`stat-value text-4xl ${colorClasses[color] || "text-primary"}`}
-      >
-        {value}
+          <div className="text-5xl">{icon}</div>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

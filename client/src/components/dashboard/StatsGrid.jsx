@@ -1,75 +1,35 @@
-import {
-  FaBolt,
-  FaLink,
-  FaImage,
-  FaCheckCircle,
-  FaHeading,
-  FaFileAlt,
-  FaDatabase,
-  FaUniversalAccess,
-} from "react-icons/fa";
-
 import MetricCard from "./MetricCard";
+import { FaCheckCircle, FaClock, FaLink, FaImage } from "react-icons/fa";
 
 function StatsGrid({ result }) {
-  if (!result) return null;
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-8">
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 mt-6">
       <MetricCard
         title="Status"
         value={result.status}
-        icon={<FaCheckCircle />}
-        color="success"
+        icon={<FaCheckCircle className="text-success" />}
+        color="border-success"
       />
 
       <MetricCard
-        title="Response"
+        title="Response Time"
         value={result.responseTime}
-        icon={<FaBolt />}
-        color="warning"
+        icon={<FaClock className="text-warning" />}
+        color="border-warning"
       />
 
       <MetricCard
         title="Links"
         value={result.links}
-        icon={<FaLink />}
-        color="info"
+        icon={<FaLink className="text-info" />}
+        color="border-info"
       />
 
       <MetricCard
         title="Images"
         value={result.images}
-        icon={<FaImage />}
-        color="primary"
-      />
-
-      <MetricCard
-        title="H1"
-        value={result.headings?.h1 ?? 0}
-        icon={<FaHeading />}
-        color="success"
-      />
-
-      <MetricCard
-        title="H2"
-        value={result.headings?.h2 ?? 0}
-        icon={<FaHeading />}
-        color="info"
-      />
-
-      <MetricCard
-        title="Missing ALT"
-        value={result.missingAlt}
-        icon={<FaUniversalAccess />}
-        color="error"
-      />
-
-      <MetricCard
-        title="Page Size"
-        value={result.pageSizeKB}
-        icon={<FaDatabase />}
-        color="primary"
+        icon={<FaImage className="text-secondary" />}
+        color="border-secondary"
       />
     </div>
   );
