@@ -32,7 +32,9 @@ function App() {
     try {
       setLoading(true);
 
-      const response = await axios.post("http://localhost:8000/api/audit", {
+      const API_URL = import.meta.env.VITE_API_URL;
+
+      await axios.post(`${API_URL}/api/audit`, {
         url,
       });
 
