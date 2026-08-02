@@ -15,5 +15,13 @@ app.use(loggerMiddleware);
 app.use("/api", healthRoutes);
 app.use("/api", auditRoutes);
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Page Pulse API is running 🚀",
+    health: "/api/health",
+    audit: "POST /api/audit",
+  });
+});
+
 
 export default app;
