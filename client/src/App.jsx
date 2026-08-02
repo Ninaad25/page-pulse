@@ -14,6 +14,7 @@ import Charts from "./components/dashboard/Charts";
 
 import MetadataCard from "./components/audit/MetadataCard";
 import HistoryTable from "./components/audit/HistoryTable";
+import Footer from "./components/layout/Footer";
 
 
 
@@ -289,16 +290,13 @@ function App() {
         />
 
         {/* Export Button */}
-       {result && (
-  <div className="flex justify-end my-6">
-    <button
-      onClick={exportPDF}
-      className="btn btn-primary"
-    >
-      📄 Export PDF
-    </button>
-  </div>
-)}
+        {result && (
+          <div className="flex justify-end my-6">
+            <button onClick={exportPDF} className="btn btn-primary">
+              📄 Export PDF
+            </button>
+          </div>
+        )}
 
         {/* Dashboard */}
         {result && (
@@ -332,6 +330,7 @@ function App() {
             </div>
           </div>
         )}
+        <Footer />
       </div>
     </div>
   );
