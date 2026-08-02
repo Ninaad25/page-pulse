@@ -34,11 +34,12 @@ function App() {
 
       const API_URL = import.meta.env.VITE_API_URL;
 
-      await axios.post(`${API_URL}/api/audit`, {
+      const response = await axios.post(`${API_URL}/api/audit`, {
         url,
       });
 
       setResult(response.data);
+
       toast.success("Website audited successfully!");
 
       setHistory((prev) => {
@@ -46,12 +47,14 @@ function App() {
         return updated.slice(0, 10);
       });
     } catch (error) {
+      console.error(error);
+
       if (error.response) {
         toast.error(error.response.data.error || "Server error");
       } else if (error.request) {
         toast.error("Cannot connect to the backend.");
       } else {
-        toast.error("Unexpected error occurred.");
+        toast.error(error.message);
       }
     } finally {
       setLoading(false);
