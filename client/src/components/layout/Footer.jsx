@@ -1,45 +1,84 @@
-import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaGlobe, FaHeart } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-20">
-      <h2 className="text-2xl font-bold">Page Pulse</h2>
+    <footer className="mt-20 rounded-3xl bg-base-200 border border-base-300 shadow-lg">
+      <div className="max-w-7xl mx-auto px-8 py-10 flex flex-col items-center text-center gap-6">
+        {/* Logo */}
+        <div>
+          <h2 className="text-3xl font-extrabold text-primary">Page Pulse</h2>
+          <p className="text-base-content/70 mt-2">
+            Professional Website SEO Audit Platform
+          </p>
+        </div>
 
-      <p>Professional Website SEO Audit Platform</p>
+        {/* Social Links */}
+        <div className="flex gap-6 text-2xl">
+          <a
+            href="https://github.com/Ninaad25/page-pulse"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors duration-300"
+            aria-label="GitHub Repository"
+          >
+            <FaGithub />
+          </a>
 
-      <div className="flex gap-5 text-2xl">
-        <a
-          href="https://github.com/Ninaad25/page-pulse"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaGithub />
-        </a>
+          <a
+            href="https://page-pulse-azure.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors duration-300"
+            aria-label="Live Demo"
+          >
+            <FaGlobe />
+          </a>
 
-        <a
-          href="https://page-pulse-azure.vercel.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaGlobe />
-        </a>
+          {/* Replace with your actual LinkedIn URL */}
+          <a
+            href="https://www.linkedin.com/in/ninaad390/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors duration-300"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
 
-        <a
-          href="https://linkedin.com/in/YOUR-LINKEDIN"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
+        {/* Tech Stack */}
+        <div className="flex flex-wrap justify-center gap-2">
+          {[
+            "React",
+            "Vite",
+            "Express",
+            "Node.js",
+            "Axios",
+            "Cheerio",
+            "DaisyUI",
+            "Chart.js",
+            "Render",
+            "Vercel",
+          ].map((tech) => (
+            <span key={tech} className="badge badge-outline">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="divider my-0"></div>
+
+        {/* Copyright */}
+        <p className="text-sm text-base-content/60 flex items-center gap-2">
+          Built with <FaHeart className="text-red-500" /> by{" "}
+          <span className="font-semibold">© 2026 Ninaad Mhadalkar</span>
+        </p>
+
+        <p className="text-xs text-base-content/50">
+          © 2026 Page Pulse. All Rights Reserved.
+        </p>
       </div>
-
-      <p className="opacity-70 text-sm">
-        Built with React • Express • Vite • DaisyUI • Chart.js • Render • Vercel
-      </p>
-
-      <p className="opacity-50 text-xs">
-        © 2026 Ninaad Mhadalkar. All rights reserved.
-      </p>
     </footer>
   );
 }
